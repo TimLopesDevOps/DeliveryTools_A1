@@ -1,1 +1,2 @@
 Some code
+Doing assignment 2, commit 1/3
