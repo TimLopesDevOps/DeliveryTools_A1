@@ -3,3 +3,4 @@ Adding some lines of text
 Adding some lines of text
 Adding some lines of text
 Adding some lines of text
+add new line
