@@ -1,5 +1,7 @@
 <footer>
-<p>world</p>
+
+<p> hello world</p>
+
   <div class="footer-container">
     <div class="footer-logo">
       <img src="images/logo.png" alt="Company Logo">
@@ -26,3 +28,4 @@
     <p>© 2023 Company Name. All Rights Reserved.</p>
   </div>
 </footer>
+.
