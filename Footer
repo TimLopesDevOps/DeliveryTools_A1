@@ -1,5 +1,7 @@
 <footer>
-<p> hello </p>
+
+<p> hello world</p>
+
   <div class="footer-container">
     <div class="footer-logo">
       <img src="images/logo.png" alt="Company Logo">
