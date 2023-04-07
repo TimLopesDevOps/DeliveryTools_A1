@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My GitHub Pages Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>Welcome to my GitHub Pages Website</h1>
+	</header>
+	<main>
+		<p>This is my first GitHub Pages website. It's still under construction, but stay tuned for more content!</p>
+	</main>
+	<footer>
+		<p>&copy; 2023 My Company, Inc.</p>
+	</footer>
+</body>
+</html>
+
+
