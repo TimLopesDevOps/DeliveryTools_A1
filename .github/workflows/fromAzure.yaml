@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: Azure/git@v0.2.0
+    - uses: action/git@v0.2.0
       with:
         git_username: ${{ secrets.GIT_USERNAME }}
         git_password: ${{ secrets.GIT_PASSWORD }}
