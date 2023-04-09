@@ -1,7 +1,8 @@
 name: My first workflow # just a comment
 
 on: [push]
-
+permissions:
+  contents: write
 jobs:
   run_command:
     runs-on: ubuntu-latest
@@ -12,4 +13,18 @@ jobs:
         run: |
          echo "hello world "
          echo "This is Tim"
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Sync with Azure DevOps
+      env:
+        AZURE_DEVOPS_EXT_PAT: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
+        AZURE_DEVOPS_REPO_URL: https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1 # replace with the URL of your Azure DevOps repo
+      run: |
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name "GitHub Actions"
+        git remote add azure $AZURE_DEVOPS_REPO_URL
+        git push azure HEAD:refs/heads/main --force
       
