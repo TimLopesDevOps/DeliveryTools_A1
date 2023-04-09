@@ -23,13 +23,9 @@ jobs:
         git_push_force: true
         git_remote_url: 'https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1'
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Login to Azure DevOps
       run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
-      
+
     - name: Import code
       run: |
         az repos create --name DeliveryTools_A1 --project DeliveryTools_A1 --detect true
