@@ -12,7 +12,7 @@ jobs:
     - name: Login to Azure DevOps
       run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
     - name: Import code
-      uses: azure/azure-cli@v1.0.1
+      uses: azure/azure-cli@v2.47.0
       with:
         inlineScript: |
           az repos import create --git-url https://github.com/TimLopesDevOps/DeliveryTools_A1.git --project DeliveryTools_A1 --repository DeliveryTools_A1 --detect true
