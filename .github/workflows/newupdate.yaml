@@ -10,7 +10,10 @@ on:
 jobs:
   update-azure:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
     steps: 
     - name: Checkout code
       uses: actions/checkout@v2
