@@ -15,10 +15,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:       
-        node-version: '16'
-        cache: npm
+    
     - name: Push to Azure DevOps
       uses: actions/github-script@v4
       with:
