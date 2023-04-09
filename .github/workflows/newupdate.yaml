@@ -10,13 +10,10 @@ on:
 jobs:
   update-azure:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node-version: [16.x]
+    
     steps: 
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Push to Azure DevOps
       uses: Azure/git@v0.2.0
