@@ -6,6 +6,9 @@ on:
   pull_request:
     types: [ closed ]
     branches: [ main ]
+    
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -22,3 +25,13 @@ jobs:
         azure_devops_user_pat: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
         git_push_force: true
         git_remote_url: 'https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1'
+
+  run_command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run echo command
+        run: echo "hello world"
+      - name: run multiple commands
+        run: |
+         echo "hello world "
+         echo "This is Tim"
