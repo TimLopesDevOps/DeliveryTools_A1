@@ -24,5 +24,4 @@ jobs:
         azure_devops_user_email: ${{ secrets.AZURE_DEVOPS_USER_EMAIL }}
         azure_devops_user_pat: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
         git_push_force: true
-        git_remote_url: 'https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1'
-        
+        git_remote_url: https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1

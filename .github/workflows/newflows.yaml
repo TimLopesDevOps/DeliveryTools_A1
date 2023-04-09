@@ -1,0 +1,18 @@
+name: Azure DevOps Update
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-azure:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Login to Azure DevOps
+      run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
+    - name: Import code
+      uses: azure/azure-cli@v1.0.1
+      with:
+        inlineScript: |
+          az repos import create --git-url https://github.com/TimLopesDevOps/DeliveryTools_A1.git --project DeliveryTools_A1 --repository DeliveryTools_A1 --detect true
