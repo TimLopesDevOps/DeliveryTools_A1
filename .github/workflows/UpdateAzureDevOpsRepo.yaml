@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Push to Azure DevOps
-      uses: Azure/git@v0.2.0
+      uses: actions/checkout@v2
       with:
         azure_devops_user_email: ${{ secrets.AZURE_DEVOPS_USER_EMAIL }}
         azure_devops_user_pat: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
