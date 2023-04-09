@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Login to Azure DevOps
       run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
