@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
+
     - name: Login to Azure DevOps
       run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
     - name: Import code
@@ -22,7 +22,6 @@ jobs:
         az repos create --name DeliveryTools_A1 --project DeliveryTools_A1 --detect true
         az repos import create --git-url https://github.com/TimLopesDevOps/DeliveryTools_A1.git --project DeliveryTools_A1 --repository DeliveryTools_A1 --detect true
     
-    steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
