@@ -7,9 +7,6 @@ on:
     types: [ closed ]
     branches: [ main ]
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,9 +16,21 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Push to Azure DevOps
-      uses: actions/checkout@v2
+      uses: Azure/git@v0.2.0
       with:
         azure_devops_user_email: ${{ secrets.AZURE_DEVOPS_USER_EMAIL }}
         azure_devops_user_pat: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
         git_push_force: true
-        git_remote_url: https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1
+        git_remote_url: 'https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1'
+
+  update-azure:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Login to Azure DevOps
+      run: az devops login --organization https://dev.azure.com/ZeroDay247 --token ${{ secrets.AZURE_DEVOPS_USER_PAT }}
+    - name: Import code
+      run: |
+        az repos create --name DeliveryTools_A1 --project DeliveryTools_A1 --detect true
+        az repos import create --git-url https://github.com/TimLopesDevOps/DeliveryTools_A1.git --project DeliveryTools_A1 --repository DeliveryTools_A1 --detect true
