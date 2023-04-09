@@ -1,0 +1,24 @@
+# New update azure flow
+name: Update new azure
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [ closed ]
+    branches: [ main ]
+
+jobs:
+  update-azure:
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Push to Azure DevOps
+      uses: Azure/git@v0.2.0
+      with:
+        azure_devops_user_email: ${{ secrets.AZURE_DEVOPS_USER_EMAIL }}
+        azure_devops_user_pat: ${{ secrets.AZURE_DEVOPS_USER_PAT }}
+        git_push_force: true
+        git_remote_url: 'https://ZeroDay247@dev.azure.com/ZeroDay247/DeliveryTools_A1/_git/DeliveryTools_A1'
