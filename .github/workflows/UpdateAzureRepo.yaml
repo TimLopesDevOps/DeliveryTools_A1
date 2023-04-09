@@ -1,12 +1,10 @@
 name: Update Azure DevOps Repo
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    types: [ closed ]
-    branches: [ main ]
+on: [push]
 
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
