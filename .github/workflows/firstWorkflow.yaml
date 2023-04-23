@@ -1,16 +1,29 @@
 name: My first workflow # just a comment
 
-on: [push]
-permissions:
-  contents: write
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    
 jobs:
-  run_command:
+  hello:
     runs-on: ubuntu-latest
     steps:
       - name: run echo command
         run: echo "hello world"
       - name: run multiple commands
         run: |
-         echo "hello world "
-         echo "This is Tim"
+          echo "hello world "
+          echo "This is Tim"
+  
+  goodbey:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goobye world
+        run: echo "Goodbye world"
+
   
